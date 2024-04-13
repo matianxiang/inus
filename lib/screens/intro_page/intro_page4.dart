@@ -15,7 +15,7 @@ class IntroPage4 extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                  child: Lottie.asset('assets/lotties/meditation.json')),
+                  child: Lottie.asset('assets/lotties/protection.json')),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                 child: Text(
