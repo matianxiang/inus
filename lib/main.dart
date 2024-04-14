@@ -1,5 +1,6 @@
 // 导入material库
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:inus/screens/first.dart';
 import 'package:inus/screens/home.dart';
 import 'package:inus/screens/login.dart';
@@ -7,7 +8,13 @@ import 'package:inus/screens/onboarding.dart';
 
 // 应用程序入口点
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp, // 竖屏 Portrait 模式
+      DeviceOrientation.portraitDown,
+    ],
+  );
   // SharedPreferences prefs = await SharedPreferences.getInstance();
   // bool hasLoadedBoardingScreen = prefs.getBool('hasLoadBoardingScreen') ?? false;
   // 接受一个Widget作为参数，并将其渲染到屏幕，这里MainApp是应用程序的根Widget

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const Color bottomNavBgColor = Color.fromARGB(255, 61, 178, 69);
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -17,12 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('伊娜斯'),
-      ),
-      body: const Center(
+    return const Scaffold(
+      body: Center(
         child: Text('Content')
       ),
     );
