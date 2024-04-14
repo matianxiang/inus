@@ -3,13 +3,14 @@ import 'package:inus/screens/intro_page/intro_page1.dart';
 import 'package:inus/screens/intro_page/intro_page2.dart';
 import 'package:inus/screens/intro_page/intro_page3.dart';
 import 'package:inus/screens/intro_page/intro_page4.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
 
   @override
-  _OnBoardingScreenState createState() => _OnBoardingScreenState();
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
@@ -18,6 +19,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   // keep track of if we are on the last page or not
   bool onLastPage = false;
+
+  Future<void> _handleTap() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool('hasLoadedBoardingScreen', true);
+    if(!mounted) return;
+    Navigator.pushNamed(context, '/home');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +41,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 onLastPage = (index == 3);
               })
             },
-            children: [IntroPage1(), IntroPage2(), IntroPage3(), IntroPage4()],
+            children: const [IntroPage1(), IntroPage2(), IntroPage3(), IntroPage4()],
           ),
           // dot indicators
           Container(
@@ -45,7 +53,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   // GestureDetector是Flutter中用于识别用户手势操作的组件，它可以包裹其他任意的Flutter小部件，并且可以识别用户的点击、双击、长按、拖动等手势操作。
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/login');
+                      Navigator.pushNamed(context, '/home');
                       // _controller.previousPage(
                       //     duration: const Duration(milliseconds: 500),
                       //     curve: Curves.easeIn);
@@ -81,10 +89,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         )
                       : GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/login');
+                            _handleTap();
                           },
                           child: const Text(
-                            '登录',
+                            '进入',
                             style: TextStyle(
                                 color: Color.fromARGB(255, 61, 178, 69),
                                 fontSize: 16.0),
