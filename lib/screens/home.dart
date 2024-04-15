@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const Color bottomNavBgColor = Color.fromARGB(255, 61, 178, 69);
@@ -14,11 +14,15 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int activeIndex = 0;
+  double scale1 = 1.0;
+  double scale2 = 1.0;
+  double scale3 = 1.0;
+  double scale4 = 1.0;
+  double scaleCenter = 1.0;
 
   @override
   void initState() {
     super.initState();
-    // 自定义state
   }
 
   @override
@@ -35,8 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
           bottomNavigationBar: SafeArea(
             child: Container(
               height: 56,
-              padding: const EdgeInsets.fromLTRB(24, 6, 24, 0),
-              margin: const EdgeInsets.fromLTRB(24, 0, 24, 4),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              margin: const EdgeInsets.symmetric(horizontal: 24),
               decoration: BoxDecoration(
                   color: bottomNavBgColor,
                   borderRadius: const BorderRadius.all(Radius.circular(24)),
@@ -46,26 +50,38 @@ class _HomeScreenState extends State<HomeScreen> {
                         offset: const Offset(0, 20),
                         blurRadius: 20)
                   ]),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
+              child: Row(children: [
+                Expanded(
+                    flex: 1,
+                    child: GestureDetector(
                         onTap: () => {
                               setState(() {
                                 activeIndex = 0;
+                                scale1 = 1.4;
+                              }),
+                              Timer.periodic(Durations.medium1, (timer) {
+                                setState(() {
+                                  scale1 = 1;
+                                });
+                                timer.cancel();
                               })
                             },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: Icon(
-                                CupertinoIcons.house,
-                                color: activeIndex == 0
-                                    ? Colors.white
-                                    : Colors.white60,
+                            AnimatedScale(
+                              scale: scale1,
+                              duration: Durations.medium1,
+                              child: SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: Icon(
+                                  CupertinoIcons.house,
+                                  color: activeIndex == 0
+                                      ? Colors.white
+                                      : Colors.white60,
+                                  size: 24,
+                                ),
                               ),
                             ),
                             Text(
@@ -78,24 +94,38 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             )
                           ],
-                        )),
-                    GestureDetector(
+                        ))),
+                Expanded(
+                    flex: 1,
+                    child: GestureDetector(
                         onTap: () => {
                               setState(() {
                                 activeIndex = 1;
+                                scale2 = 1.4;
+                              }),
+                              Timer.periodic(Durations.medium1, (timer) {
+                                setState(() {
+                                  scale2 = 1;
+                                });
+                                timer.cancel();
                               })
                             },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: Icon(
-                                CupertinoIcons.tv,
-                                color: activeIndex == 1
-                                    ? Colors.white
-                                    : Colors.white60,
+                            AnimatedScale(
+                              scale: scale2,
+                              duration: Durations.medium1,
+                              child: SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: Icon(
+                                  CupertinoIcons.tv,
+                                  color: activeIndex == 1
+                                      ? Colors.white
+                                      : Colors.white60,
+                                  size: 24,
+                                ),
                               ),
                             ),
                             Text(
@@ -108,24 +138,74 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             )
                           ],
-                        )),
-                    GestureDetector(
+                        ))),
+                Expanded(
+                    flex: 1,
+                    child: GestureDetector(
+                        onTap: () => {
+                              setState(() {
+                                scaleCenter = 1.4;
+                              }),
+                              Timer.periodic(Durations.medium1, (timer) {
+                                setState(() {
+                                  scaleCenter = 1;
+                                });
+                                timer.cancel();
+                              })
+                            },
+                        child: AnimatedScale(
+                            scale: scaleCenter,
+                            duration: Durations.medium1,
+                            child: Container(
+                              margin: const EdgeInsets.fromLTRB(12, 14, 12, 14),
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.horizontal(
+                                    left: Radius.circular(12),
+                                    right: Radius.circular(12)),
+                                color: Color.fromARGB(255, 27, 124, 52),
+                              ),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    CupertinoIcons.add,
+                                    color: Colors.white,
+                                    size: 24,
+                                  ),
+                                ],
+                              ),
+                            )))),
+                Expanded(
+                    flex: 1,
+                    child: GestureDetector(
                         onTap: () => {
                               setState(() {
                                 activeIndex = 2;
+                                scale3 = 1.4;
+                              }),
+                              Timer.periodic(Durations.medium1, (timer) {
+                                setState(() {
+                                  scale3 = 1;
+                                });
+                                timer.cancel();
                               })
                             },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: Icon(
-                                CupertinoIcons.wand_rays,
-                                color: activeIndex == 2
-                                    ? Colors.white
-                                    : Colors.white60,
+                            AnimatedScale(
+                              scale: scale3,
+                              duration: Durations.medium1,
+                              child: SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: Icon(
+                                  CupertinoIcons.wand_rays,
+                                  color: activeIndex == 2
+                                      ? Colors.white
+                                      : Colors.white60,
+                                  size: 24,
+                                ),
                               ),
                             ),
                             Text(
@@ -138,24 +218,38 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             )
                           ],
-                        )),
-                    GestureDetector(
+                        ))),
+                Expanded(
+                    flex: 1,
+                    child: GestureDetector(
                         onTap: () => {
                               setState(() {
                                 activeIndex = 3;
+                                scale4 = 1.4;
+                              }),
+                              Timer.periodic(Durations.medium1, (timer) {
+                                setState(() {
+                                  scale4 = 1;
+                                });
+                                timer.cancel();
                               })
                             },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: Icon(
-                                CupertinoIcons.person,
-                                color: activeIndex == 3
-                                    ? Colors.white
-                                    : Colors.white60,
+                            AnimatedScale(
+                              scale: scale4,
+                              duration: Durations.medium1,
+                              child: SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: Icon(
+                                  CupertinoIcons.person,
+                                  color: activeIndex == 3
+                                      ? Colors.white
+                                      : Colors.white60,
+                                  size: 24,
+                                ),
                               ),
                             ),
                             Text(
@@ -168,8 +262,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             )
                           ],
-                        )),
-                  ]),
+                        ))),
+              ]),
             ),
           ),
           body: Container(
