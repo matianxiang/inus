@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:inus/constants/constants.dart';
 import 'package:inus/screens/pages/home.dart';
 import 'package:inus/screens/pages/me.dart';
 import 'package:inus/screens/pages/message.dart';
 import 'package:inus/screens/pages/service.dart';
-
 import 'package:inus/screens/pages/tv.dart';
 
-const Color bottomNavBgColor = Color.fromARGB(255, 61, 178, 69);
+const Color bottomNavBgColor = Constants.themeColor;
 const Color iconFillColor = Color.fromARGB(255, 34, 194, 58);
 const Color iconColor = Color.fromARGB(255, 131, 131, 131);
 

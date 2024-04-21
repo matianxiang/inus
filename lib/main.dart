@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/'
         '/boarding-screen': (context) => const OnBoardingScreen(),
         '/home': (context) => const HomeScreen(),
         '/login': (context) => const LoaginScreen(),
