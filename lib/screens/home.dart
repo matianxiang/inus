@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:inus/constants/constants.dart';
@@ -20,6 +22,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int activeIndex = 0;
+  double scaleCenter = 1.0;
 
   @override
   void initState() {
@@ -157,54 +160,47 @@ class _HomeScreenState extends State<HomeScreen> {
                           )
                         ],
                       ))),
-                      Expanded(
-                  flex: 1,
-                  child: InkWell(
-                      onTap: () => {
-                            setState(() {
-                              activeIndex = 2;
-                            }),
-                          },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                              width: 36,
-                              height: 8,
-                              child: Container(
-                                alignment: Alignment.topCenter,
-                                decoration: BoxDecoration(
-                                    border: Border(
-                                        top: BorderSide(
-                                            color: bottomNavBgColor,
-                                            width: 2,
-                                            style: activeIndex == 2
-                                                ? BorderStyle.solid
-                                                : BorderStyle.none))),
-                              )),
-                          SizedBox(
-                            width: 22,
-                            height: 22,
-                            child: Icon(
-                              activeIndex == 2
-                                  ? CupertinoIcons.bell_fill
-                                  : CupertinoIcons.bell,
-                              color:
-                                  activeIndex == 2 ? iconFillColor : iconColor,
-                              size: 22,
+              Expanded(
+                flex: 1,
+                child: GestureDetector(
+                  onTap: () => {
+                    setState(() {
+                      scaleCenter = 1.2;
+                    }),
+                    Timer.periodic(Durations.medium1, (timer) {
+                      setState(() {
+                        scaleCenter = 1.0;
+                      });
+                      timer.cancel();
+                    })
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      AnimatedScale(
+                        scale: scaleCenter,
+                        duration: Durations.medium1,
+                        child: SizedBox(
+                          width: 36,
+                          child: Container(
+                            margin: const EdgeInsets.only(top: 12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: Constants.themeColor,
+                            ),
+                            child: const Icon(
+                              Icons.add,
+                              color: Colors.white,
+                              size: 28,
                             ),
                           ),
-                          Text(
-                            '通知',
-                            style: TextStyle(
-                              fontSize: 10,
-                              color:
-                                  activeIndex == 2 ? iconFillColor : iconColor,
-                            ),
-                          )
-                        ],
-                      ))),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
               Expanded(
                   flex: 1,
                   child: InkWell(
@@ -236,15 +232,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 22,
                             child: Icon(
                               activeIndex == 3
-                                  ? CupertinoIcons.cube_fill
-                                  : CupertinoIcons.cube,
+                                  ? CupertinoIcons.bell_fill
+                                  : CupertinoIcons.bell,
                               color:
                                   activeIndex == 3 ? iconFillColor : iconColor,
                               size: 22,
                             ),
                           ),
                           Text(
-                            '服务',
+                            '通知',
                             style: TextStyle(
                               fontSize: 10,
                               color:

@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage>
           IconButton(
             icon: const Icon(
               CupertinoIcons.search,
-              size: 24,
+              size: 28,
               color: Constants.themeColor,
             ),
             onPressed: () => {},
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage>
         leading: IconButton(
           icon: const Icon(
             CupertinoIcons.bars,
-            size: 24,
+            size: 28,
             color: Constants.themeColor,
           ),
           onPressed: () => {},
