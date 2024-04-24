@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
         canPop: false,
         child: Scaffold(
           bottomNavigationBar: Container(
-            height: 64,
+            height: 72,
             decoration: const BoxDecoration(
                 border: Border(
                     top: BorderSide(
