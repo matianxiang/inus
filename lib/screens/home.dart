@@ -182,17 +182,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         scale: scaleCenter,
                         duration: Durations.medium1,
                         child: SizedBox(
-                          width: 36,
+                          width: 44,
                           child: Container(
-                            margin: const EdgeInsets.only(top: 12),
+                            margin: const EdgeInsets.only(top: 10),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(6),
+                              borderRadius: BorderRadius.circular(14),
                               color: Constants.themeColor,
                             ),
                             child: const Icon(
                               Icons.add,
                               color: Colors.white,
-                              size: 28,
+                              size: 32,
                             ),
                           ),
                         ),
