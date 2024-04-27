@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inus/constants/constants.dart';
 import 'package:inus/screens/intro_page/intro_page1.dart';
 import 'package:inus/screens/intro_page/intro_page2.dart';
 import 'package:inus/screens/intro_page/intro_page3.dart';
@@ -61,7 +62,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     child: const Text(
                       '跳过',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 61, 178, 69),
+                          color: Constants.highLightThemeColor,
                           fontSize: 16.0),
                     ),
                   ),
@@ -69,7 +70,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     controller: _controller,
                     count: 4,
                     effect: const ExpandingDotsEffect(
-                      activeDotColor: Color.fromARGB(255, 61, 178, 69),
+                      activeDotColor: Constants.highLightThemeColor,
                     ),
                   ),
 
@@ -83,7 +84,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           child: const Text(
                             '下一页',
                             style: TextStyle(
-                                color: Color.fromARGB(255, 61, 178, 69),
+                                color: Constants.highLightThemeColor,
                                 fontSize: 16.0),
                           ),
                         )
@@ -94,7 +95,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           child: const Text(
                             '进入',
                             style: TextStyle(
-                                color: Color.fromARGB(255, 61, 178, 69),
+                                color: Constants.highLightThemeColor,
                                 fontSize: 16.0),
                           ),
                         ),

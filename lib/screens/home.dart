@@ -9,8 +9,8 @@ import 'package:inus/screens/pages/message.dart';
 import 'package:inus/screens/pages/service.dart';
 import 'package:inus/screens/pages/tv.dart';
 
-const Color bottomNavBgColor = Constants.themeColor;
-const Color iconFillColor = Color.fromARGB(255, 34, 194, 58);
+const Color bottomNavBgColor = Constants.highLightThemeColor;
+const Color iconFillColor = Constants.highLightThemeColor;
 const Color iconColor = Color.fromARGB(255, 131, 131, 131);
 
 class HomeScreen extends StatefulWidget {
@@ -187,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             margin: const EdgeInsets.only(top: 10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(14),
-                              color: Constants.themeColor,
+                              color: Constants.highLightThemeColor,
                             ),
                             child: const Icon(
                               Icons.add,

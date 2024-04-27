@@ -21,7 +21,7 @@ class IntroPage4 extends StatelessWidget {
                 child: Text(
                   '还有更多更多？😎',
                   style: const TextStyle(
-                    color: Color.fromARGB(255, 248, 126, 173),
+                    color: Color.fromARGB(255, 61, 178, 69),
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     fontFamily: AutofillHints.addressCity

@@ -37,12 +37,12 @@ class _HomePageState extends State<HomePage>
           dividerHeight: 0,
           isScrollable: true,
           tabAlignment: TabAlignment.center,
-          indicatorColor: Constants.themeColor,
+          indicatorColor: Constants.highLightThemeColor,
           indicator: const CustomUnderlineTabIndicator(),
           indicatorWeight: 1,
           indicatorSize: TabBarIndicatorSize.label,
           indicatorPadding: const EdgeInsets.only(bottom: 10),
-          labelColor: Constants.themeColor,
+          labelColor: Constants.highLightThemeColor,
           labelStyle: const TextStyle(
             fontWeight: FontWeight.w600,
           ),
@@ -69,18 +69,18 @@ class _HomePageState extends State<HomePage>
             icon: const Icon(
               CupertinoIcons.search,
               size: 28,
-              color: Constants.themeColor,
+              color: Constants.highLightThemeColor,
             ),
             onPressed: () => {},
           )
         ],
-        // backgroundColor: Constants.themeColor,
+        // backgroundColor: Constants.highLightThemeColor,
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(
             CupertinoIcons.bars,
             size: 28,
-            color: Constants.themeColor,
+            color: Constants.highLightThemeColor,
           ),
           onPressed: () => {},
         ),

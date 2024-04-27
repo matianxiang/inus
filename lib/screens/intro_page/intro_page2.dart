@@ -21,7 +21,7 @@ class IntroPage2 extends StatelessWidget {
                 child: Text(
                   '想要线上问诊？🤗',
                   style: const TextStyle(
-                    color: Color.fromARGB(255, 248, 126, 173),
+                    color: Color.fromARGB(255, 61, 178, 69),
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     fontFamily: AutofillHints.addressCity

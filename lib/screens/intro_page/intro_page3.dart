@@ -21,7 +21,7 @@ class IntroPage3 extends StatelessWidget {
                 child: Text(
                   '记录健康生活？😏',
                   style: const TextStyle(
-                    color: Color.fromARGB(255, 248, 126, 173),
+                    color: Color.fromARGB(255, 61, 178, 69),
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     fontFamily: AutofillHints.addressCity
