@@ -18,7 +18,7 @@ class CustomUnderlineTabIndicator extends Decoration {
   /// Create an underline style selected tab indicator.
   const CustomUnderlineTabIndicator({
     this.borderRadius,
-    this.borderSide = const BorderSide(width: 2.0, color: Constants.themeColor),
+    this.borderSide = const BorderSide(width: 2.0, color: Constants.highLightThemeColor),
     this.insets = EdgeInsets.zero,
   });
 

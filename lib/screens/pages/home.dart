@@ -37,16 +37,16 @@ class _HomePageState extends State<HomePage>
           dividerHeight: 0,
           isScrollable: true,
           tabAlignment: TabAlignment.center,
-          indicatorColor: Constants.highLightThemeColor,
+          indicatorColor: Colors.black,
           indicator: const CustomUnderlineTabIndicator(),
           indicatorWeight: 1,
           indicatorSize: TabBarIndicatorSize.label,
           indicatorPadding: const EdgeInsets.only(bottom: 10),
-          labelColor: Constants.highLightThemeColor,
+          labelColor:Constants.appBarLabelColor,
           labelStyle: const TextStyle(
             fontWeight: FontWeight.w600,
           ),
-          unselectedLabelColor: Colors.black45,
+          unselectedLabelColor: Colors.black54,
           unselectedLabelStyle: const TextStyle(
             fontWeight: FontWeight.normal,
           ),
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage>
             icon: const Icon(
               CupertinoIcons.search,
               size: 28,
-              color: Constants.highLightThemeColor,
+              color: Constants.appBarLabelColor,
             ),
             onPressed: () => {},
           )
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage>
           icon: const Icon(
             CupertinoIcons.bars,
             size: 28,
-            color: Constants.highLightThemeColor,
+            color: Constants.appBarLabelColor,
           ),
           onPressed: () => {},
         ),
